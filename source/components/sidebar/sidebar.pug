@@ -1,0 +1,7 @@
+//- sidebar module
+mixin sidebar(arrayText)
+    .sidebar
+        ul.sidebar__list
+            each val in arrayText
+                li.sidebar__list-item
+                    a(class=val.className).sidebar__list-link= val.text

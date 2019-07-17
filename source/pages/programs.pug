@@ -1,0 +1,168 @@
+extends ../views/_default
+
+//- mixins
+include ../components/meta/meta
+include ../components/sidebar/sidebar
+include ../components/block-images/block-images
+include ../components/block-items/block-items
+include ../components/block-images-text/block-images-text
+include ../components/block-text/block-text
+include ../components/block-thumbnail/block-thumbnail
+
+block var
+    -
+        var fonts = [
+        'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&subset=latin,cyrillic'
+        ];
+
+        var css = [
+            '../css/extended.css',
+            '../css/style.css',
+            '../css/markup.css',
+        ];
+
+        var js = [
+        ];
+
+block head
+    +meta('', '', css, js, fonts)
+
+block body
+    block header
+        header
+
+    block main
+        main.main
+            .container
+                .col-left
+                    -
+                        var arrayText = [
+                            {
+                                className: 'is-active',
+                                text: 'Из чего она состоит?'
+                            },
+                            {
+                            className: '',
+                            text: 'Что вас ждет?'
+                            },
+                            {
+                            className: '',
+                            text: 'Для кого она предназначена?'
+                            },
+                            {
+                            className: '',
+                            text: 'Сколько требуется времени на прохождение?'
+                            },
+                            {
+                            className: '',
+                            text: 'Что я получу после окончания «Родительского собрания»?'
+                            },
+                            {
+                            className: '',
+                            text: 'Каковы преимущества и дополнительные возможноститой программы?'
+                            },
+                            {
+                            className: '',
+                            text: 'Отзывы'
+                            },
+                            {
+                            className: '',
+                            text: 'Хочу пройти «Родительское собрание».Как это сделать?'
+                            },
+                        ]
+                    +sidebar(arrayText)
+                .col-right
+                    .content
+                        .logo-page
+                            img(src="../images/content/pc.png" alt="PC")
+
+                        .text.text--margin
+                            | «Родительское собрание» — это программа, которая даёт родителям
+                            | информацию о том, как проходит п оступление в вузы США.
+                            | Благодаря практическим советам, основанным на опыте многих
+                            | студентов, вы сможете помочь своему ребенку и поддержать его
+                            | на этом непростом пути.
+
+                        .block-images--margin
+                            +block-images("../images/content/images-1.png")
+
+                        .block-items--margin
+                            -
+                                var arrayItems = [
+                                    {
+                                        images: "../images/content/icon-1.png",
+                                        text: "Ознакомительный курс из 5 шагов — видеоуроки и текстовая информация, которые можно изучать в удобное для вас время; "
+                                    },
+                                    {
+                                        images: "../images/content/icon-2.png",
+                                        text: "Участие в тематических встречах, которые проходят в наших центрах и онлайн, а также в различных мероприятиях (лекциях, \n"+
+                                        "семинарах, дискуссиях), посвященных образованию в США;"
+                                    },
+                                    {
+                                        images: "../images/content/icon-3.png",
+                                        text: "Посещение индивидуальных консультаций со специалистами EducationUSA. Первая консультация предоставляется всем желающим, последующие — только тем родителям, чьи дети прошли программу подготовки к самостоятельномупоступлению в вузы США 120 Credits. (тут можно ссылку)"
+                                    }
+                                ]
+                            +block-items(arrayItems)
+
+                        .block-images-text--margin
+                            -
+                                var arrayBlock = [
+                                    {
+                                        img: "../images/content/images-2.png",
+                                        text: "Для родителей, которые хотят, чтобы их дети после школы продолжили обучение в США."
+                                    }
+                                ]
+                            +block-images-text(arrayBlock)
+
+                        .block-text--margin
+                            +block-text('Программа рассчитана на один год. Все лекции и семинары разбиты по темам и предлагаются в течение года с января по декабрь, однако вы можете присоединиться к ней в любое время.')
+
+                        .block-items--margin2
+                            -
+                                var arrayItems = [
+                                    {
+                                        images: "../images/content/icon-4.png",
+                                        text: "Актуальную информацию об обучении в США и финансировании образования международных студентов; "
+                                    },
+                                    {
+                                        images: "../images/content/icon-5.png",
+                                        text: "Помощь в выработке стратегии поступления в вузы США и эффективном использовании ресурсов, доступных через EducationUSA"
+                                    }
+                                ]
+                            +block-items(arrayItems)
+                        .block-thumbnail--margin
+                            -
+                                var arrayThumbnail = [
+                                    {
+                                        img: "../images/content/images-3.png",
+                                        text: "Вы сможете помочь своему ребенку в сборе документов, выборе вуза и во многих других вопросах, связанных с поступлением"
+                                    },
+                                    {
+                                        img: "../images/content/images-4.png",
+                                        text: "Благодаря совместной работе над подготовкой к поступлению улучшится взаимопонимание между вами и ребенком"
+                                    },
+                                    {
+                                        img: "../images/content/images-5.png",
+                                        text: "Во время тематических встреч вы сможете пообщаться с другими родителями, в том числе и с теми, чьи дети уже учатся в США."
+                                    }
+                                ]
+                            +block-thumbnail(arrayThumbnail)
+
+                        .block-images-text--margin2
+                            -
+                                var arrayBlock = [
+                                    {
+                                        text: "Мы открыты для всех родителей, которые хотят помочь своим детям поступить в один из вузов США! Рекомендуем начать программу как можно раньше, чтобы было достаточно времени для планирования поступления и подготовки ваших детей к вступительным экзаменам. При желании пройти программу можно несколько раз!"
+                                    }
+                                ]
+                            +block-images-text(arrayBlock)
+
+                        a(href="javascript:void(0)").btn-red Начать&nbsp
+                            span.btn-red__bold программу
+
+                        .question-program.t-a-c
+                                | Если у вас есть вопросы по программе,<br> напишите на <a class="link-red" href="mail:adviser@educationusarussia.org">adviser@educationusarussia.org</a>
+
+    block footer
+        footer
